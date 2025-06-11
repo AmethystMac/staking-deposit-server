@@ -9,23 +9,23 @@ from eth_typing import Address, HexAddress
 from eth_utils import to_canonical_address
 from py_ecc.bls import G2ProofOfPossession as bls
 
-from staking_deposit.exceptions import ValidationError
-from staking_deposit.key_handling.key_derivation.path import mnemonic_and_path_to_key
-from staking_deposit.key_handling.keystore import (
+from lib.exceptions import ValidationError
+from lib.key_handling.key_derivation.path import mnemonic_and_path_to_key
+from lib.key_handling.keystore import (
     Keystore,
     ScryptKeystore,
 )
-from staking_deposit.settings import DEPOSIT_CLI_VERSION, BaseChainSetting
-from staking_deposit.utils.constants import (
+from lib.settings import DEPOSIT_CLI_VERSION, BaseChainSetting
+from lib.utils.constants import (
     BLS_WITHDRAWAL_PREFIX,
     ETH1_ADDRESS_WITHDRAWAL_PREFIX,
     ETH2GWEI,
     MAX_DEPOSIT_AMOUNT,
     MIN_DEPOSIT_AMOUNT,
 )
-from staking_deposit.utils.crypto import SHA256
-from staking_deposit.utils.intl import load_text
-from staking_deposit.utils.ssz import (
+from lib.utils.crypto import SHA256
+from lib.utils.intl import load_text
+from lib.utils.ssz import (
     compute_deposit_domain,
     compute_bls_to_execution_change_domain,
     compute_signing_root,
