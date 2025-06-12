@@ -8,10 +8,10 @@ if [[ "$OSTYPE" == "linux"* ]] || [[ "$OSTYPE" == "linux-android"* ]] || [[ "$OS
 
 elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "cygwin" ]]; then
     echo "Starting server..."
-    python ./api/server.py "$@"
+    uvicorn api.server:app --reload
 
 else
-    echo "Sorry, to run deposit-cli on" $(uname -s)", please see the trouble-shooting on https://github.com/ethereum/staking-deposit-cli"
+    echo "Please use one of the verified Operating Systems to start the server. Visit: https://github.com/AmethystMac/staking-deposit-server.git"
     exit 1
 
 fi
